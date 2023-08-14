@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "type": "module",
+    "dotenv": "^16.3.1",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.33.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "nodemon": "^3.0.1",
+    "prettier": "3.0.1"
+  },
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "format": "prettier --write . --ignore-path .gitignore",
+    "lint": "eslint . --ignore-path .gitignore",
+    "fix-style": "npm run format && npm run lint -- --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint"
+  }
+}
